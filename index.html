@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ごきげん人生デザイン塾 | MICA（ミカ）</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FDF9F4;
+    --sage: #8A9E8C;
+    --deep-sage: #5C7A5F;
+    --terracotta: #C47E5E;
+    --terracotta-light: #E8B49A;
+    --gold: #C9A86C;
+    --gold-light: #E8D5A8;
+    --charcoal: #2C2C2C;
+    --mid-grey: #7A7A7A;
+    --light-grey: #E8E4DF;
+    --section-gap: 120px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ==========================================
+     ナビゲーション
+  ========================================== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,168,108,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--mid-grey);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 2px;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.12em;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--charcoal) !important; color: white !important; }
+
+  /* ==========================================
+     ヒーローセクション
+  ========================================== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--terracotta);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .hero-catch {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+
+  .hero-catch em {
+    font-style: normal;
+    color: var(--terracotta);
+    border-bottom: 2px solid var(--terracotta-light);
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    color: var(--mid-grey);
+    line-height: 2;
+    margin-bottom: 48px;
+    max-width: 420px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: white;
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .btn-primary:hover { background: var(--charcoal); transform: translateY(-2px); }
+
+  .btn-secondary {
+    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    padding: 16px 36px;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .btn-secondary:hover { background: var(--charcoal); color: white; }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-grey);
+    overflow: hidden;
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--deep-sage) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    gap: 12px;
+    opacity: 0.85;
+  }
+
+  .hero-image-placeholder small {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.15em;
+  }
+
+  /* ==========================================
+     入口の言葉（共感セクション）
+  ========================================== */
+  .empathy {
+    padding: var(--section-gap) 80px;
+    background: var(--warm-white);
+    position: relative;
+  }
+
+  .empathy::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.4em;
+    color: var(--terracotta);
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    line-height: 1.7;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto 60px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 28px;
+    background: var(--cream);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .check-item:hover {
+    border-color: var(--terracotta-light);
+    box-shadow: 0 4px 20px rgba(196,126,94,0.1);
+  }
+
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--terracotta);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+  }
+
+  .check-icon::after {
+    content: '✓';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.65rem;
+    color: var(--terracotta);
+  }
+
+  .check-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+  }
+
+  .empathy-bridge {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .empathy-bridge p {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--charcoal);
+  }
+
+  .empathy-bridge .highlight-box {
+    margin-top: 36px;
+    padding: 28px 40px;
+    border-left: 3px solid var(--terracotta);
+    background: rgba(196,126,94,0.05);
+    text-align: left;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--deep-sage);
+  }
+
+  /* ==========================================
+     ミカのビジョン
+  ========================================== */
+  .vision {
+    padding: var(--section-gap) 80px;
+    background: var(--deep-sage);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision::before {
+    content: 'VISION';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8rem;
+    color: rgba(255,255,255,0.05);
+    letter-spacing: 0.3em;
+    white-space: nowrap;
+  }
+
+  .vision-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vision-quote {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    line-height: 1.8;
+    color: white;
+    font-weight: 400;
+  }
+
+  .vision-quote em {
+    font-style: normal;
+    color: var(--gold-light);
+    display: block;
+    margin-top: 16px;
+    font-size: 0.85em;
+  }
+
+  .vision-content p {
+    font-size: 0.9rem;
+    line-height: 2.2;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 20px;
+  }
+
+  .vision-stat {
+    display: flex;
+    gap: 48px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    color: var(--gold-light);
+    line-height: 1;
+    display: block;
+    font-weight: 300;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.15em;
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ==========================================
+     ミカのストーリー
+  ========================================== */
+  .story {
+    padding: var(--section-gap) 80px;
+    background: var(--cream);
+  }
+
+  .story-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .story-image-col {
+    position: sticky;
+    top: 100px;
+  }
+
+  .story-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, var(--sage), var(--deep-sage));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+  }
+
+  .story-credentials {
+    margin-top: 24px;
+  }
+
+  .credential-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-grey);
+    font-size: 0.72rem;
+    color: var(--mid-grey);
+    letter-spacing: 0.05em;
+  }
+
+  .credential-dot {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .story-content {}
+
+  .story-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.8rem;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .story-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--terracotta);
+    letter-spacing: 0.25em;
+    margin-bottom: 32px;
+    display: block;
+    font-style: italic;
+  }
+
+  .story-text {
+    font-size: 0.9rem;
+    line-height: 2.2;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .story-text strong {
+    font-weight: 500;
+    color: var(--deep-sage);
+  }
+
+  .story-highlight {
+    margin: 40px 0;
+    padding: 32px 40px;
+    background: var(--warm-white);
+    border-left: 4px solid var(--gold);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--charcoal);
+  }
+
+  /* ==========================================
+     塾の構造
+  ========================================== */
+  .structure {
+    padding: var(--section-gap) 80px;
+    background: var(--warm-white);
+  }
+
+  .classes-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .class-track {
+    position: relative;
+    margin-top: 64px;
+  }
+
+  .class-track::before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--terracotta-light), var(--sage));
+  }
+
+  .class-item {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 56px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .class-icon-col {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .class-number {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border: 1.5px solid;
+    background: var(--warm-white);
+  }
+
+  .class-item:nth-child(1) .class-number { color: var(--terracotta); border-color: var(--terracotta); }
+  .class-item:nth-child(2) .class-number { color: var(--gold); border-color: var(--gold); }
+  .class-item:nth-child(3) .class-number { color: var(--sage); border-color: var(--sage); }
+  .class-item:nth-child(4) .class-number { color: var(--deep-sage); border-color: var(--deep-sage); }
+
+  .class-body {
+    padding: 28px 36px;
+    background: var(--cream);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    flex: 1;
+    transition: box-shadow 0.3s;
+  }
+
+  .class-body:hover {
+    box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+  }
+
+  .class-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: var(--mid-grey);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .class-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .class-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .tag-basic { background: rgba(196,126,94,0.12); color: var(--terracotta); }
+  .tag-mid { background: rgba(201,168,108,0.12); color: var(--gold); }
+  .tag-adv { background: rgba(138,158,140,0.15); color: var(--deep-sage); }
+
+  .class-desc {
+    font-size: 0.87rem;
+    line-height: 1.9;
+    color: var(--mid-grey);
+  }
+
+  .class-flow {
+    text-align: center;
+    margin-top: 48px;
+    padding: 40px;
+    background: var(--deep-sage);
+    border-radius: 4px;
+    color: white;
+  }
+
+  .flow-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .flow-text {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    line-height: 2;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ==========================================
+     ごきげんコーチ紹介
+  ========================================== */
+  .coaches {
+    padding: var(--section-gap) 80px;
+    background: var(--cream);
+  }
+
+  .coaches-intro {
+    max-width: 680px;
+    margin: 0 auto 72px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 2.2;
+    color: var(--mid-grey);
+  }
+
+  .coaches-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .coach-card {
+    background: var(--warm-white);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .coach-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .coach-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--sage) 0%, var(--terracotta-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .coach-info {
+    padding: 24px;
+  }
+
+  .coach-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .coach-class {
+    font-size: 0.7rem;
+    color: var(--terracotta);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .coach-bio {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: var(--mid-grey);
+  }
+
+  .coaches-note {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 0.82rem;
+    color: var(--mid-grey);
+    line-height: 2;
+  }
+
+  /* ==========================================
+     卒業生ビフォーアフター
+  ========================================== */
+  .testimonials {
+    padding: var(--section-gap) 80px;
+    background: var(--warm-white);
+    position: relative;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .testimonial-header {
+    padding: 20px 28px;
+    background: var(--light-grey);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .testimonial-meta {}
+
+  .testimonial-name {
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    display: block;
+  }
+
+  .testimonial-class {
+    font-size: 0.72rem;
+    color: var(--mid-grey);
+    letter-spacing: 0.1em;
+  }
+
+  .testimonial-body {
+    padding: 28px;
+  }
+
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .before, .after {
+    padding: 14px 16px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  .before {
+    background: rgba(122,122,122,0.08);
+    border-left: 2px solid var(--mid-grey);
+    color: var(--mid-grey);
+  }
+
+  .after {
+    background: rgba(92,122,95,0.08);
+    border-left: 2px solid var(--deep-sage);
+    color: var(--deep-sage);
+  }
+
+  .before-label, .after-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .before-label { color: var(--mid-grey); }
+  .after-label { color: var(--deep-sage); }
+
+  .testimonial-quote {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: var(--charcoal);
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .testimonial-quote::before {
+    content: '❝';
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: var(--terracotta-light);
+    font-size: 1rem;
+  }
+
+  /* ==========================================
+     CTA セクション
+  ========================================== */
+  .cta-section {
+    padding: var(--section-gap) 80px;
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-lead {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    line-height: 1.8;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .cta-sub {
+    font-size: 0.88rem;
+    line-height: 2;
+    color: var(--mid-grey);
+    margin-bottom: 48px;
+  }
+
+  .cta-button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .btn-cta-main {
+    background: var(--terracotta);
+    color: white;
+    padding: 22px 60px;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .btn-cta-main:hover { background: var(--charcoal); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+  .cta-note {
+    font-size: 0.75rem;
+    color: var(--mid-grey);
+    letter-spacing: 0.05em;
+  }
+
+  .cta-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 60px 0;
+    text-align: center;
+  }
+
+  .step-item {
+    padding: 28px 20px;
+    background: var(--warm-white);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+  }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--terracotta-light);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .step-text {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--charcoal);
+  }
+
+  /* ==========================================
+     フッター
+  ========================================== */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.6);
+    padding: 60px 80px;
+  }
+
+  .footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+  }
+
+  .footer-brand {}
+
+  .footer-logo {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    color: white;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-desc {
+    font-size: 0.78rem;
+    line-height: 2;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .footer-links h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--terracotta-light); }
+
+  .footer-bottom {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ==========================================
+     汎用ユーティリティ
+  ========================================== */
+  .divider {
+    width: 40px;
+    height: 1.5px;
+    background: var(--terracotta);
+    margin: 20px auto;
+  }
+
+  .text-center { text-align: center; }
+
+  /* Google Sites 移植ノート */
+  .googlesites-note {
+    margin: 0 80px 60px;
+    padding: 20px 28px;
+    background: rgba(201,168,108,0.12);
+    border: 1px solid var(--gold-light);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: var(--mid-grey);
+  }
+
+  .googlesites-note strong {
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  /* ==========================================
+     スマホ対応（768px以下）
+  ========================================== */
+  @media (max-width: 768px) {
+    :root { --section-gap: 72px; }
+
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 100px 28px 48px; }
+    .hero-catch { font-size: 1.7rem; }
+    .hero-right { height: 280px; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; }
+
+    .empathy, .vision, .story, .structure,
+    .coaches, .testimonials, .cta-section {
+      padding: var(--section-gap) 24px;
+    }
+
+    .checklist-grid { grid-template-columns: 1fr; }
+
+    .vision-inner { grid-template-columns: 1fr; gap: 40px; }
+    .vision-quote { font-size: 1.5rem; }
+    .vision-stat { gap: 24px; }
+
+    .story-inner { grid-template-columns: 1fr; gap: 40px; }
+    .story-image-col { position: static; }
+    .story-photo { aspect-ratio: 4/3; }
+
+    .class-track::before { left: 28px; }
+    .class-number { width: 56px; height: 56px; font-size: 1.2rem; }
+    .class-body { padding: 20px; }
+
+    .coaches-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-steps { grid-template-columns: 1fr; }
+
+    .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     ナビゲーション
+========================================== -->
+<nav>
+  <a href="#" class="nav-logo">ごきげん人生デザイン塾</a>
+  <ul class="nav-links">
+    <li><a href="#vision">ビジョン</a></li>
+    <li><a href="#story">ミカについて</a></li>
+    <li><a href="#structure">塾の仕組み</a></li>
+    <li><a href="#coaches">コーチ紹介</a></li>
+    <li><a href="#testimonials">卒業生の声</a></li>
+    <li><a href="#cta" class="nav-cta">無料説明会へ</a></li>
+  </ul>
+</nav>
+
+
+<!-- ==========================================
+     ① ヒーロー（入口の言葉）
+========================================== -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">GOKIGEN JINSEI DESIGN JUKU</span>
+    <h1 class="hero-catch">
+      夫にイライラが止まらない。<br>
+      子どもに怒鳴ってしまう。<br>
+      <em>その苦しさの正体</em>、<br>
+      一緒に見てみませんか。
+    </h1>
+    <p class="hero-sub">
+      頑張っているのに、なぜかいつも満たされない。<br>
+      感情を抑えようとするほど、爆発してしまう。<br>
+      あなたは悪くない。ただ、「ある眼鏡」をかけているだけです。
+    </p>
+    <div class="hero-buttons">
+      <a href="#cta" class="btn-primary">無料説明会に参加する</a>
+      <a href="#story" class="btn-secondary">ミカのストーリー</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-placeholder">
+      <span>宮内ミカ　写真</span>
+      <small>※ Google Sites では画像をここに挿入</small>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ② 共感セクション（あなたのことですか？）
+========================================== -->
+<section class="empathy">
+  <div class="section-header">
+    <span class="section-label">Does this sound like you?</span>
+    <h2 class="section-title">
+      こんな気持ち、ありませんか？
+    </h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="checklist-grid">
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">夫の行動にイライラして、また怒ってしまった</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">子どもに怒鳴った後、自己嫌悪に陥る夜がある</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">「私ばっかり」と思いながら、誰にも言えない</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">頑張っているのに、なぜか満たされない</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">人間関係で同じパターンを繰り返している気がする</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">「もっと良いお母さんに、良い妻に」と自分を責め続けている</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">笑顔でいたいのに、気づいたら感情を家族にぶつけている</p>
+    </div>
+    <div class="check-item">
+      <div class="check-icon"></div>
+      <p class="check-text">こんなはずじゃないのに、という気持ちが消えない</p>
+    </div>
+  </div>
+
+  <div class="empathy-bridge">
+    <p>
+      その苦しさは、あなたの性格のせいでも、<br>
+      意志の弱さのせいでもありません。
+    </p>
+    <div class="highlight-box">
+      苦しみは「出来事」から生まれるのではなく、<br>
+      あなたが無意識に持っている「自己イメージ」に<br>
+      触れたときに生まれています。<br><br>
+      そのことに気づくだけで、人生の見え方が変わります。
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ③ ミカのビジョン
+========================================== -->
+<section class="vision" id="vision">
+  <div class="vision-inner">
+    <div class="vision-quote">
+      「ごきげんに生きる」<br>
+      その連鎖が<br>
+      <em>世界を変えていく。</em>
+    </div>
+    <div class="vision-content">
+      <p>
+        ミカが目指しているのは、一人の女性が変わることではありません。
+        その変化が、子どもへ、夫へ、家族へと広がり、社会全体にあたたかな波紋を描いていくこと。
+      </p>
+      <p>
+        「フキゲン」は、母から娘へと引き継がれます。でも、その連鎖を、私たちの世代で断ち切ることができる。
+        自分の苦しみと向き合った一人ひとりが、その連鎖を終わらせる力を持っています。
+      </p>
+      <p>
+        <strong style="color:rgba(255,255,255,0.95)">10年で1万人の女性がごきげんに生きる未来</strong>を描いています。
+        それは、笑顔と安心が連鎖していく社会です。
+      </p>
+      <div class="vision-stat">
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">学んだ女性</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10</span>
+          <span class="stat-label">年の探究</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">13</span>
+          <span class="stat-label">期開講</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ④ ミカのストーリー
+========================================== -->
+<section class="story" id="story">
+  <div class="story-inner">
+
+    <div class="story-image-col">
+      <div class="story-photo">
+        ※ ミカ写真
+      </div>
+      <div class="story-credentials">
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>全米NLP協会認定 NLPマスタープラクティショナー</span>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>NLP認定上級マスターコーチ</span>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>タイムラインセラピー®マスタープラクティショナー</span>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>認定子育てアドバイザー</span>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>5人の子どもの母（20歳〜2歳）</span>
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          <span>京都在住・姑と完全同居</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-content">
+      <div class="section-header" style="text-align:left; margin-bottom:40px;">
+        <span class="section-label">About MICA</span>
+        <h2 class="section-title" style="text-align:left;">かつての私は、<br>出口のない暗い森の中にいた。</h2>
+      </div>
+
+      <h3 class="story-name">MICA（ミカ）</h3>
+      <span class="story-name-en">Miyauchi Mica</span>
+
+      <p class="story-text">
+        渡米して最初の子育てをスタートした瞬間から、私は「フキゲン妻」に豹変しました。
+        夫にイライラして八つ当たりし、子どもにきつく接してしまう。その後に訪れる自己嫌悪。
+        それを繰り返す日々でした。
+      </p>
+
+      <p class="story-text">
+        <strong>「こんなはずじゃない。なんで私はこうなんだろう。」</strong><br>
+        理想の自分と現実の自分の乖離が、毎日心に刺さっていました。
+      </p>
+
+      <div class="story-highlight">
+        その苦しみの原因は、「我慢は美徳」「人に頼ってはいけない」「他人の目線が一番大事」――
+        親の世代から無意識に受け取ってきた価値観でした。
+        外で良妻賢母を演じるストレスを、家庭内で発散していたのです。
+      </div>
+
+      <p class="story-text">
+        そのことに気づいてから、約10年。心理、感情の構造、人間関係の仕組みを徹底的に探究しました。
+        NLPの上級マスターコーチとして認定を受け、総セッション時間は1万時間を超えています。
+      </p>
+
+      <p class="story-text">
+        今、私は5人の子どもを育てながら、姑と完全同居し、ごきげんに生きています。
+        かつて大嫌いだった姑との関係も、今では感謝し合える関係になりました。
+      </p>
+
+      <p class="story-text">
+        <strong>「あの苦しみは、変われる証拠だった。」</strong><br>
+        同じ苦しみを抱える方に、その道を伝えることが、私の使命です。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ⑤ 塾の仕組み・構造
+========================================== -->
+<section class="structure" id="structure">
+  <div class="section-header">
+    <span class="section-label">How the Juku Works</span>
+    <h2 class="section-title">塾の仕組み</h2>
+    <div class="divider"></div>
+    <p style="font-size:0.88rem; color:var(--mid-grey); margin-top:20px; line-height:2; max-width:560px; margin-left:auto; margin-right:auto;">
+      ごきげん人生デザイン塾は、4つのクラスで構成された段階的な学びの場です。<br>
+      知識を詰め込む「勉強の場」ではなく、日常を舞台に自分を実験する場です。
+    </p>
+  </div>
+
+  <div class="classes-container">
+    <div class="class-track">
+
+      <!-- 大地クラス -->
+      <div class="class-item">
+        <div class="class-icon-col">
+          <div class="class-number">01</div>
+        </div>
+        <div class="class-body">
+          <span class="class-label">FOUNDATION</span>
+          <h3 class="class-name">⛰ 大地クラス</h3>
+          <span class="class-tag tag-basic">初級 ・ 3ヶ月</span>
+          <p class="class-desc">
+            すべての始まりは「自分を知ること」から。<br>
+            日々のイライラや悲しみ、これまで「悪いもの」として見てきた感情を丁寧に見つめ直します。
+            「なぜ私はこう感じるのか」「本当は何を求めているのか」を紐解いていく、根っこを育てるクラスです。
+            自分を責める癖が少しずつほどけ、「これでいいんだ」と感じられる瞬間が増えていきます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 羅針盤クラス -->
+      <div class="class-item">
+        <div class="class-icon-col">
+          <div class="class-number">02</div>
+        </div>
+        <div class="class-body">
+          <span class="class-label">DIRECTION</span>
+          <h3 class="class-name">🧭 羅針盤クラス</h3>
+          <span class="class-tag tag-mid">中級 ・ 大地クラス修了後</span>
+          <p class="class-desc">
+            心の大地に根を張ったら、次は「どこへ向かうか」を見つめます。
+            「自分は何が好きで、何を大切にしたいのか」本音の価値観を掘り起こしながら、
+            外の世界に振り回されず、迷ったときに戻ってこられる「内なるナビ」を手に入れるクラスです。
+          </p>
+        </div>
+      </div>
+
+      <!-- 開花クラス -->
+      <div class="class-item">
+        <div class="class-icon-col">
+          <div class="class-number">03</div>
+        </div>
+        <div class="class-body">
+          <span class="class-label">EXPRESSION</span>
+          <h3 class="class-name">🌼 開花クラス</h3>
+          <span class="class-tag tag-adv">上級 ・ 羅針盤クラス修了後</span>
+          <p class="class-desc">
+            根を張り、方向が定まったら、いよいよ自分を咲かせるステージ。
+            内面の学びを「行動」や「表現」として現実に活かし、自分の本音をやさしく誠実に伝える力を磨きます。
+            あなたという花が咲くことで、まわりの人の笑顔もひらいていきます。
+          </p>
+        </div>
+      </div>
+
+      <!-- 光クラス -->
+      <div class="class-item">
+        <div class="class-icon-col">
+          <div class="class-number">04</div>
+        </div>
+        <div class="class-body">
+          <span class="class-label">LEADERSHIP</span>
+          <h3 class="class-name">✨ 光クラス</h3>
+          <span class="class-tag tag-adv">上級 ・ 開花クラス修了後</span>
+          <p class="class-desc">
+            あなた自身が「光」となって、周囲をあたたかく照らすステージ。
+            自分だけでなく、家族・仲間・社会へと「ごきげんの循環」を広げていきます。
+            あなたの生き方が、誰かの希望になる。過去の経験が、誰かを励ます物語に変わります。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="class-flow">
+      <span class="flow-label">STEP BY STEP</span>
+      <p class="flow-text">
+        焦らず、比べず、あなたのペースで。<br>
+        まずは無料個別説明会からご参加ください。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ⑥ ごきげんコーチ紹介
+========================================== -->
+<section class="coaches" id="coaches">
+  <div class="section-header">
+    <span class="section-label">Our Coaches</span>
+    <h2 class="section-title">ごきげんコーチのご紹介</h2>
+    <div class="divider"></div>
+  </div>
+
+  <p class="coaches-intro">
+    ごきげん人生デザイン塾には、ミカメソッドを学んだ認定コーチたちが在籍しています。
+    全員が、かつて同じ苦しみを経験し、自らのフキゲンと向き合ってきた仲間です。
+  </p>
+
+  <div class="coaches-grid">
+    <!-- コーチ1 -->
+    <div class="coach-card">
+      <div class="coach-photo">※ コーチ写真</div>
+      <div class="coach-info">
+        <h3 class="coach-name">コーチ名 A</h3>
+        <span class="coach-class">ごきげん人生コーチ｜大地クラス担当</span>
+        <p class="coach-bio">
+          （コーチの簡単なストーリー・専門領域・担当クラスなどをここに記載します）
+        </p>
+      </div>
+    </div>
+
+    <!-- コーチ2 -->
+    <div class="coach-card">
+      <div class="coach-photo">※ コーチ写真</div>
+      <div class="coach-info">
+        <h3 class="coach-name">コーチ名 B</h3>
+        <span class="coach-class">ごきげん人生コーチ｜羅針盤クラス担当</span>
+        <p class="coach-bio">
+          （コーチの簡単なストーリー・専門領域・担当クラスなどをここに記載します）
+        </p>
+      </div>
+    </div>
+
+    <!-- コーチ3 -->
+    <div class="coach-card">
+      <div class="coach-photo">※ コーチ写真</div>
+      <div class="coach-info">
+        <h3 class="coach-name">コーチ名 C</h3>
+        <span class="coach-class">ごきげん人生コーチ｜開花クラス担当</span>
+        <p class="coach-bio">
+          （コーチの簡単なストーリー・専門領域・担当クラスなどをここに記載します）
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p class="coaches-note">
+    ※ コーチ人数・担当クラスは実際の情報に合わせて更新してください。<br>
+    コーチの写真・プロフィール文を追加することで、信頼感が大きく高まります。
+  </p>
+</section>
+
+
+<!-- ==========================================
+     ⑦ 卒業生ビフォーアフター
+========================================== -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header">
+    <span class="section-label">Before & After</span>
+    <h2 class="section-title">卒業生の変化</h2>
+    <div class="divider"></div>
+    <p style="font-size:0.88rem; color:var(--mid-grey); margin-top:20px; line-height:2;">
+      ごきげん人生デザイン塾で学んだ方々の、リアルな変化をご紹介します。
+    </p>
+  </div>
+
+  <div class="testimonials-grid">
+
+    <!-- 声1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">山</div>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">山田 さん（仮名）</span>
+          <span class="testimonial-class">大地クラス受講 / 30代・2児の母</span>
+        </div>
+      </div>
+      <div class="testimonial-body">
+        <div class="before-after">
+          <div class="before">
+            <span class="before-label">BEFORE</span>
+            夫が大嫌いで、毎日文句しか出てこなかった。子どもの前でも怒鳴ってしまっていた。
+          </div>
+          <div class="after">
+            <span class="after-label">AFTER</span>
+            夫への感謝が自然に出てきた。子どもと笑って過ごす時間が増えた。
+          </div>
+        </div>
+        <p class="testimonial-quote">
+          大嫌いだった夫に、気づいたら恋心を抱いていて自分でも驚きました。
+          変わったのは夫ではなく、私の「見方」だったんですね。
+        </p>
+      </div>
+    </div>
+
+    <!-- 声2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">田</div>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">田中 さん（仮名）</span>
+          <span class="testimonial-class">羅針盤クラス受講 / 40代・職場の人間関係に悩んでいた</span>
+        </div>
+      </div>
+      <div class="testimonial-body">
+        <div class="before-after">
+          <div class="before">
+            <span class="before-label">BEFORE</span>
+            職場で同じパターンの衝突を繰り返していた。なぜかいつも損な役回り。
+          </div>
+          <div class="after">
+            <span class="after-label">AFTER</span>
+            衝突の「仕組み」がわかった。感情が落ち着いてから対応できるようになった。
+          </div>
+        </div>
+        <p class="testimonial-quote">
+          「自分が悪い」でも「相手が悪い」でもなかった。
+          自己イメージというレンズで物事を見ていたと気づいたとき、すっと楽になりました。
+        </p>
+      </div>
+    </div>
+
+    <!-- 声3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">鈴</div>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">鈴木 さん（仮名）</span>
+          <span class="testimonial-class">大地クラス受講 / 30代・学校に行けない子どもを持つ母</span>
+        </div>
+      </div>
+      <div class="testimonial-body">
+        <div class="before-after">
+          <div class="before">
+            <span class="before-label">BEFORE</span>
+            子どもが学校で話せないことを深刻に悩んでいた。自分を責めていた。
+          </div>
+          <div class="after">
+            <span class="after-label">AFTER</span>
+            子どもがアッサリ話せるようになって、自分のほうがびっくりした。
+          </div>
+        </div>
+        <p class="testimonial-quote">
+          私が変わっただけで、子どもの様子まで変わるなんて思っていませんでした。
+          家の空気が変わったんだと思います。
+        </p>
+      </div>
+    </div>
+
+    <!-- 声4 -->
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar">佐</div>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">佐藤 さん（仮名）</span>
+          <span class="testimonial-class">開花クラス受講 / 40代・夫から離婚を言い渡されていた</span>
+        </div>
+      </div>
+      <div class="testimonial-body">
+        <div class="before-after">
+          <div class="before">
+            <span class="before-label">BEFORE</span>
+            夫から離婚を言い渡され、どうすることもできなかった。
+          </div>
+          <div class="after">
+            <span class="after-label">AFTER</span>
+            夫から愛情表現全開で接してもらえるようになった。
+          </div>
+        </div>
+        <p class="testimonial-quote">
+          「どうして伝わらないの」が「伝わった」に変わった瞬間は、本当に信じられませんでした。
+          これまでの人生がひっくり返るほどの変化です。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================
+     ⑧ CTA（行動を促すセクション）
+========================================== -->
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <div class="section-header">
+      <span class="section-label">First Step</span>
+      <h2 class="section-title">まずは、話を聞いてみませんか。</h2>
+      <div class="divider"></div>
+    </div>
+
+    <p class="cta-sub">
+      無料の個別説明会では、あなたの現状をお聞きし、<br>
+      ごきげん人生デザイン塾があなたに合っているかを一緒に確認します。<br>
+      入塾を急かすことはありません。まず話してみてください。
+    </p>
+
+    <div class="cta-steps">
+      <div class="step-item">
+        <span class="step-number">01</span>
+        <p class="step-text">無料説明会に<br>申し込む</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">02</span>
+        <p class="step-text">ミカと1対1で<br>お話しする</p>
+      </div>
+      <div class="step-item">
+        <span class="step-number">03</span>
+        <p class="step-text">自分に合ったクラスで<br>学びをスタート</p>
+      </div>
+    </div>
+
+    <div class="cta-button-group">
+      <a href="https://www.reservestock.jp/inquiry/35459" class="btn-cta-main">
+        無料個別説明会に申し込む
+      </a>
+      <p class="cta-note">オンライン開催 ／ 60分 ／ 完全無料</p>
+    </div>
+
+    <div style="margin-top:60px; padding:32px 40px; background:var(--warm-white); border:1px solid var(--light-grey); border-radius:4px;">
+      <p style="font-family:'Shippori Mincho',serif; font-size:0.95rem; line-height:2.2; color:var(--charcoal); margin-bottom:16px;">
+        まずはメルマガから読んでみたい方へ
+      </p>
+      <p style="font-size:0.82rem; color:var(--mid-grey); line-height:2; margin-bottom:20px;">
+        「読むだけでごきげんになる」無料メルマガを毎日配信しています。<br>
+        ブログに書けないリアルな話を、メルマガで綴っています。
+      </p>
+      <a href="https://www.reservestock.jp/subscribe/102991" class="btn-secondary" style="font-size:0.8rem;">
+        無料メルマガに登録する
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================
+     フッター
+========================================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-logo">ごきげん人生デザイン塾</span>
+      <p class="footer-desc">
+        MICA（ミカ）主宰。感情に翻弄される日々から、<br>
+        ごきげんに生きる人生へ。<br>
+        150人以上の女性が学んだ独自メソッドを提供しています。
+      </p>
+    </div>
+    <div class="footer-links">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#vision">ビジョン</a></li>
+        <li><a href="#story">ミカについて</a></li>
+        <li><a href="#structure">塾の仕組み</a></li>
+        <li><a href="#coaches">コーチ紹介</a></li>
+        <li><a href="#testimonials">卒業生の声</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://ameblo.jp/tamken4930/" target="_blank">アメブロ</a></li>
+        <li><a href="https://note.com/micasmilemica" target="_blank">note</a></li>
+        <li><a href="https://www.instagram.com/micasmilemica/" target="_blank">Instagram</a></li>
+        <li><a href="https://www.facebook.com/micasmilemica" target="_blank">Facebook</a></li>
+        <li><a href="https://www.reservestock.jp/subscribe/102991" target="_blank">無料メルマガ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2024 ごきげん人生デザイン塾 MICA（ミカ）. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
