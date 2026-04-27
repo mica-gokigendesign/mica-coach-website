@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ごきげん人生デザイン術 1日セミナー｜2026年6月14日（日）</title>
+<link rel="icon" type="image/png" href="https://mica.coach/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1410;
+    --ink-light: #4a3f35;
+    --ink-muted: #8a7a6e;
+    --cream: #faf6f0;
+    --warm-white: #fffdf9;
+    --gold: #b8924a;
+    --gold-light: #e8d4a8;
+    --gold-pale: #f5edd8;
+    --terracotta: #c4633a;
+    --moss: #5a6b4a;
+    --dust: #e8e0d4;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 80px;
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 70%, rgba(184,146,74,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 75% 25%, rgba(196,99,58,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* 苦しみの言葉 — 最初に目に入るもの */
+  .hero-pain {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(15px, 2.2vw, 19px);
+    font-weight: 400;
+    color: rgba(250,246,240,0.45);
+    line-height: 2.4;
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-pain span {
+    display: block;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero-headline {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(24px, 4.5vw, 46px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(14px, 2vw, 17px);
+    color: rgba(250,246,240,0.5);
+    letter-spacing: 0.12em;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(184,146,74,0.7);
+    background: rgba(184,146,74,0.15);
+    color: var(--gold-light);
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(13px,1.6vw,15px);
+    letter-spacing: 0.2em;
+    padding: 10px 28px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.0s forwards;
+  }
+
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.1s forwards;
+  }
+
+  .hero-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(14px, 2vw, 16px);
+    color: rgba(250,246,240,0.65);
+    list-style: none;
+  }
+
+  .hero-info-item::before {
+    display: none;
+  }
+
+  .price-block {
+    background: rgba(184,146,74,0.08);
+    border: 1px solid rgba(184,146,74,0.25);
+    padding: 20px 40px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.2s forwards;
+  }
+
+  .price-original {
+    font-size: 13px;
+    color: rgba(250,246,240,0.3);
+    text-decoration: line-through;
+    letter-spacing: 0.05em;
+  }
+
+  .price-special-label {
+    font-size: 11px;
+    color: var(--terracotta);
+    letter-spacing: 0.15em;
+    margin: 4px 0;
+  }
+
+  .price-main {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: var(--cream);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    padding: 20px 60px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.3s forwards;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.5s forwards;
+  }
+
+  .scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(250,246,240,0.3);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s ease infinite;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 100px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 500;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-light);
+    max-width: 60px;
+  }
+
+  .section-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── EMPATHY ── */
+  .empathy-section {
+    padding: 100px 24px;
+    background: var(--warm-white);
+  }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .check-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--dust);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.8;
+  }
+
+  .check-list li::before {
+    content: '✓';
+    color: var(--terracotta);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    padding: 80px 24px;
+    background: var(--ink);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(184,146,74,0.12) 0%, transparent 70%);
+  }
+
+  .divider-text {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(18px, 3vw, 30px);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 2.0;
+    letter-spacing: 0.08em;
+    position: relative;
+  }
+
+  .divider-text em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* ── STORY ── */
+  .story-section {
+    padding: 100px 24px;
+    background: var(--cream);
+  }
+
+  .about-body {
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 2.2;
+    color: var(--ink-light);
+  }
+
+  .about-body p + p {
+    margin-top: 28px;
+  }
+
+  .about-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── METHOD ── */
+  .method-section {
+    padding: 100px 24px;
+    background: var(--warm-white);
+  }
+
+  /* ── PROGRAM ── */
+  .program-section {
+    padding: 100px 24px;
+    background: var(--cream);
+  }
+
+  .program-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .program-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--dust);
+  }
+
+  .program-item:last-child { border-bottom: none; }
+
+  .program-time {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+  }
+
+  .program-content-title {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(15px, 2.2vw, 18px);
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .program-content-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.9;
+  }
+
+  .program-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border: 1px solid currentColor;
+    margin-bottom: 10px;
+  }
+
+  .tag-head { color: var(--moss); }
+  .tag-heart { color: var(--terracotta); }
+  .tag-body { color: var(--gold); }
+  .tag-word { color: var(--ink-muted); }
+
+  /* ── VOICE ── */
+  .voice-section {
+    padding: 100px 24px;
+    background: var(--warm-white);
+  }
+
+  .voice-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .voice-card {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 32px;
+  }
+
+  .voice-text {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 2.2;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+  }
+
+  .voice-name {
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── MICA ── */
+  .mica-section {
+    padding: 100px 24px;
+    background: #2e1a1e;
+    color: var(--cream);
+  }
+
+  .mica-section .section-label { color: var(--gold); }
+  .mica-section .section-title { color: var(--cream); }
+
+  .mica-body {
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 2.2;
+    color: rgba(250,246,240,0.75);
+  }
+
+  .mica-body p + p { margin-top: 28px; }
+
+  .mica-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .mica-title {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: rgba(250,246,240,0.5);
+    margin-bottom: 32px;
+  }
+
+  /* ── DETAIL ── */
+  .detail-section {
+    padding: 100px 24px;
+    background: var(--gold-pale);
+  }
+
+  .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 48px;
+  }
+
+  .detail-table tr { border-bottom: 1px solid var(--gold-light); }
+
+  .detail-table th {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-align: left;
+    padding: 24px 24px 24px 0;
+    width: 120px;
+    font-weight: 500;
+    vertical-align: top;
+  }
+
+  .detail-table td {
+    font-size: clamp(13px, 1.8vw, 15px);
+    color: var(--ink-light);
+    padding: 24px 0;
+    line-height: 1.9;
+  }
+
+  .price-highlight {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    color: var(--terracotta);
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-section {
+    padding: 120px 24px;
+    background: var(--ink);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(184,146,74,0.1) 0%, transparent 70%);
+  }
+
+  .cta-section .section-title {
+    color: var(--cream);
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .cta-section p {
+    color: rgba(250,246,240,0.6);
+    font-size: 14px;
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+    position: relative;
+  }
+
+  .cta-btn-large {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(15px, 2.2vw, 18px);
+    letter-spacing: 0.15em;
+    padding: 24px 80px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cta-btn-large:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  .cta-note {
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+    font-size: 12px;
+    color: rgba(250,246,240,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 24px;
+    background: #0f0c09;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: rgba(250,246,240,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+  }
+
+  .sticky-cta.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .sticky-btn {
+    display: block;
+    padding: 14px 28px;
+    background: var(--terracotta);
+    color: var(--cream);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+  }
+
+  .sticky-btn:hover { transform: translateY(-2px); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    50% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .program-item { grid-template-columns: 1fr; gap: 8px; }
+    .detail-table th { width: 80px; font-size: 12px; }
+    .cta-btn-large { padding: 20px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://www.reservestock.jp/page/consecutive_events/46064" class="sticky-btn" target="_blank" rel="noopener">申し込む →</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+
+  <!-- 入口：苦しみの言葉から始まる -->
+  <p class="hero-pain">
+    <span>夫にイライラが止まらない。</span>
+    <span>子どもに怒鳴ってしまう。</span>
+    <span>姑や母の愚痴を聞くのが、もう限界。</span>
+    <span>頑張っているのに、ずっと疲れている。</span>
+  </p>
+
+  <div class="hero-divider"></div>
+
+  <h1 class="hero-headline">
+    フキゲンや生きづらさには、<br>
+    正体がある。<br>仕組みがある。<br>
+    <em>それを知った瞬間から、<br>景色が変わる。</em>
+  </h1>
+
+  <div class="hero-badge">知って、感じて、生まれ直す。<br>1日体験型セミナー</div>
+
+  <p style="font-family:'Shippori Mincho',serif; font-size:clamp(26px,4.5vw,44px); font-weight:700; color:var(--cream); letter-spacing:0.08em; margin-bottom:48px; opacity:0; animation: fadeUp 0.8s ease 1.05s forwards;">
+    ごきげん人生デザイン術<br>
+    <span style="font-size:0.65em; letter-spacing:0.15em; color:var(--gold);">1日セミナー</span>
+  </p>
+
+  <div class="hero-info">
+    <div class="hero-info-item">2026年6月14日（日）受付10:00〜／開始10:15〜17:00</div>
+    <div class="hero-info-item">東京都江東区某所</div>
+  </div>
+
+  <div class="price-block">
+    <div class="price-original">定価 ¥33,000</div>
+    <div class="price-special-label">▼ 特別価格</div>
+    <div class="price-main">¥11,000（税込）</div>
+  </div>
+
+  <a href="https://www.reservestock.jp/page/consecutive_events/46064" class="cta-btn" target="_blank" rel="noopener">
+    申し込む
+  </a>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ─── EMPATHY ─── -->
+<section class="empathy-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">こんな方へ</div>
+    <h2 class="section-title">
+      あなたは今、<br>こんな苦しさの中にいませんか？
+    </h2>
+    <ul class="check-list">
+      <li>夫（パートナー）へのイライラが止まらず、自己嫌悪を繰り返している</li>
+      <li>子どもに怒鳴ってしまう自分を、どうにかしたいと思い続けている</li>
+      <li>姑や実母の愚痴を聞くたびに、気力が吸い取られる感覚がある</li>
+      <li>人間関係で同じパターンを繰り返している気がする</li>
+      <li>頑張っているのに、なんとなく満たされない</li>
+      <li>変わりたいと思って本を読んだりセミナーに行ったりしたけれど、何かが変わらない</li>
+      <li>自分らしく生きたいのに、何が「自分らしい」のかわからない</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── DIVIDER ─── -->
+<div class="divider reveal">
+  <p class="divider-text">
+    これらの苦しみは、<br>
+    あなたが弱いからでも<br>
+    努力が足りないからでも、<br>
+    ありません。<br><br>
+    <em>苦しみには、正体がある。<br>仕組みがある。</em><br><br>
+    それを知るだけで、<br>
+    言うことを聞かない子を、<br>尊敬できる。<br>
+    夫の愚痴が、面白くなる。<br>
+    職場の待遇が変わり、<br>昇進、昇給する。<br><br>
+    本当の話です。
+  </p>
+</div>
+
+<!-- ─── STORY：なぜこのセミナーを作ったのか ─── -->
+<section class="story-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">なぜ、このセミナーを作ったのか</div>
+    <div class="about-body">
+      <p>かつての私は、「出口がどこにあるかも分からない、暗い森の中をさまよっているよう」な日々を送っていました。</p>
+      <p>子どもに感情をぶつけては、自分を責める。夫との心の距離が広がっていく。同居の姑には、嫌悪の気持ちが暴走する。それでもどうしたらいいかわからない。「大人になるということは、こんなものだろう」と、うそぶいてごまかしていました。</p>
+
+      <div style="margin: 40px 0; position: relative;">
+        <img src="https://mica.coach/micabefore.JPG" alt="2016年のMICA（ミカ）" style="width: 100%; max-width: 270px; display: block; filter: grayscale(20%); border-radius: 4px;">
+        <p style="font-size: 12px; color: var(--ink-muted); letter-spacing: 0.1em; margin-top: 10px;">2016年。どん底の時代。</p>
+      </div>
+
+      <p>30代も半ばを過ぎたころ、同期の友人たちは次々と管理職になっていきました。そんな中、8年間ただただ子どもを産み育てた私は、まるで自分だけ取り残されたような劣等感の中にいました。</p>
+      <p>そこへ、姑との完全同居がスタート。上手くいくはずがありません。険悪な嫁姑関係を目の当たりにして、子どもたちは泣いていました。追い討ちをかけるように、子どもたちの不登校。原因不明の体調不良。夫とは、業務連絡しか交わさない日々。</p>
+      <p>すべての良くないことは、わたしのせい。大切な人たちを不幸にする自分など、生きる価値もない——。</p>
+      <p>感情の嵐に翻弄され、自分の人生を生きている感覚もなく、必死で平気な顔をして「幸せそうな人生」を演じるしかなかった。そんなわたしは、文字通り苦しみのどん底にいました。</p>
+
+      <p>その苦しみが解けたのは、あることに気づいたときでした。苦しみの原因は、夫でも子どもでも姑でも、出来事でもなかった。自分がどういう人間だと思っているか——<br>その、ごくシンプルな構造の中にあったのです。</p>
+
+      <div style="margin: 40px 0; padding: 32px 40px; border-left: 4px solid var(--gold); background: var(--gold-pale);">
+        <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(16px, 2.2vw, 20px); font-weight: 600; color: var(--ink); line-height: 2.0; margin: 0;">
+          その仕組みに気づいた瞬間から、<br>景色が変わり始めました。
+        </p>
+      </div>
+
+      <p>姑とは、家庭を運営する心強いチームメイトという関係性に。娘たちの体調不良はすっかり鳴りを潜め、拍子抜けするほど。不登校だった長女は、大学生となり一人暮らしをしています。夫とは気持ちの話をするようになり、今現在も、私の最も安心な安全地帯として、共に居続けてくれています。そして私は、これらの気づきと学びの旅を、ブログに綴り続けました。「ミカさん、これは私のことです」「これは、自分の妻のことです」——そんな声が届き始め、2019年に、ごきげん人生デザイン塾が、誕生したのです。</p>
+
+      <div style="margin: 40px 0;">
+        <img src="https://mica.coach/micaf2.jpg" alt="今のMICA（ミカ）と子ども" style="width: 100%; max-width: 480px; display: block; border-radius: 4px;">
+        <p style="font-size: 12px; color: var(--ink-muted); letter-spacing: 0.1em; margin-top: 10px;">景色が変わった、今。2025年、夫撮影。4歳四女と。</p>
+      </div>
+
+      <p>2024年、12年間同居した姑を看取りました。</p>
+      <p>病が告知されたとき、本当に辛かった。自分でも戸惑うほど、何故なのか、とてつもなく意地悪な気持ちになりました。なんで病気になったの！？って、責めたかった。あれもこれも、体にいいものを用意したのに……全然言うことを聞かないで！！って。もちろん、姑にぶつけることは出来ません。わたしはこの気持ちを、自分の中に留めることが出来ず、色んな人に吐露させてもらいました。いろんな人に助けを求めました。親の介護、初めての経験です。この感情がなんなのか、私にはサッパリ分からなかった。</p>
+      <p>でも、とある人から「それだけ、姑さんを大事に思っているんだね」、と言われたときに、救われた思いがしました。わたしのこの苦しみは、姑が大好きで、生きていてほしいという願いの上にあった、それが分かったのです。</p>
+      <p>人を頼り、人に甘え、そうして私たち家族は、一緒に姑を看取りました。穏やかな旅立ちでした。家族全員が、おばあちゃんと共に生きた日々を抱きしめ、慈しむ、そんな闘病期間でした。生前、わたしは、彼女に伝えることができました。「おばあちゃんと一緒に暮らせて、とっても助かったよ。楽しかったよ。ありがとう」と。彼女は「よかったー」と言っていました。</p>
+
+      <div style="margin: 56px 0;">
+        <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(15px, 1.8vw, 16px); font-weight: 600; color: var(--ink); line-height: 2.2; margin: 0 0 32px;">
+          自分の親に「産んでくれてありがとう、育ててくれてありがとう」と言える人は、どれだけいるでしょうか。ほとんどの人が「言えないなあ」と言います。「自分の子には、"生まれてきてくれてありがとう"と、言えるのに」と。
+        </p>
+        <div style="border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); padding: 32px 0; margin: 0 0 32px;">
+          <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(18px, 2.5vw, 22px); font-weight: 600; color: var(--ink); line-height: 1.9; margin: 0 0 12px;">大切な人に、ありがとうと言える自分になること。</p>
+          <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(14px, 1.8vw, 15px); color: var(--gold); line-height: 2.0; margin: 0;">生きている間に。肉体と肉体が、触れあえる間に。</p>
+        </div>
+        <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(15px, 1.8vw, 16px); font-weight: 600; color: var(--ink); line-height: 2.2; margin: 0;">
+          これが、<span style="text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; text-decoration-thickness: 0.5px;">ごきげん人生をデザインする</span>ということの、本当の意味だと思っています。
+        </p>
+      </div>
+
+      <div style="margin: 40px 0; padding: 32px 40px; border-left: 4px solid var(--gold); background: var(--gold-pale);">
+        <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(16px, 2.2vw, 20px); font-weight: 600; color: var(--ink); line-height: 2.0; margin: 0;">
+          「この人は、ここで変わる。」
+        </p>
+      </div>
+      <p>6年間、塾を運営してきて、参加した方が変容していくのを目の当たりにするたびに、その確信は深まりました。でも同時に、ずっと気になっていたことがありました。「よくわからない」と頭で考えすぎて、一歩が踏み出せない人がいる。塾の敷居を高いと感じて、来られない人がいる。</p>
+      <p>だから、作りました。塾で得られることを、体感できる1日を。</p>
+      <p style="font-family: 'Shippori Mincho', serif; font-size: clamp(18px, 2.5vw, 24px); font-weight: 600; color: var(--ink); line-height: 1.8;">
+        あなたのこれまでの歩みが、ここへ連れてきた。<br>無限の可能性を開く入り口が、ここにあります。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── METHOD ─── -->
+<section class="method-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">ごきげんメソッドについて</div>
+    <h2 class="section-title">
+      「気づくだけでいい」<br>
+      それだけで、人生は変わり始める
+    </h2>
+    <div class="about-body">
+      <p>このセミナーでお伝えするのは、決意でも努力でも根性でもありません。</p>
+      <p>夫に同じことを言われても、ある日はカッとなって、ある日はなぜか笑えてしまう。そんな経験はありませんか？感情は、出来事に直接反応して生じているのではありません。「自分はこういう人間だ」という思い込みを通して、感情を選択しているのです。</p>
+      <p>「あなたは、あなたのことを、どんな人間だと思っていますか？」</p>
+      <p>この問いへの答えが変わってゆくと、同じ出来事がまったく違って見え始めます。夫の言葉が、姑の愚痴が、子どもの反応が——全部違って見えてくる。</p>
+      <p>それだけのことです。でもそれが、全てです。</p>
+
+      <div style="margin: 40px 0; padding: 32px 40px; background: var(--gold-pale); border-left: 4px solid var(--gold);">
+        <div style="margin-bottom: 20px;">
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">姑への尊敬の念を、温かな気持ちで子どもに語れるようになった。</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">夫の愚痴を聞きながら、心から「おつかれさま」と言えるようになった。</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">言うことを聞かない子を見て、「自分がある子だなあ」と感心できるようになった。</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">同僚や上司の反応が不思議と変わり、職場の居心地と待遇がよくなった。</p>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">不安から辞められなかった仕事をスッパリ辞めて、好きなことで起業した。</p>
+        </div>
+        <div>
+          <p style="font-family:'Shippori Mincho',serif; font-size:clamp(14px,1.8vw,15px); font-weight:600; color:var(--ink); line-height:1.8; margin:0;">険悪だった実家への帰省が、大切にされる時間に変わった。</p>
+        </div>
+      </div>
+
+      <p>これは全て、仕組みに気づいた人たちの、実際の変化です。</p>
+      <p>私自身もそのひとりです。グレーの無機質なオフィスに毎日通勤していたあの頃から、今は自分の裁量で、必要な方のお役に立ち、感謝を伝えられる仕事をしています。家族との時間を大切にしながら。</p>
+      <p style="font-family:'Shippori Mincho',serif; font-size:clamp(17px,2.2vw,22px); font-weight:700; color:var(--ink); line-height:2.0;">
+        気づくだけでいい。<br>
+        人生が変わる「気づき」を、<br>
+        このセミナーで体感してください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAM ─── -->
+<section class="program-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">当日の流れ</div>
+    <h2 class="section-title">1日で体験する、変容の地図</h2>
+
+    <div style="margin-bottom:40px; padding:24px 32px; background:var(--gold-pale); border:1px solid var(--gold-light);">
+      <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); line-height:1.9; margin:0;">
+        気づきは、1日で起きる。<br>
+        変容は、積み重ねでしか起きない。<br>
+        <span style="font-size:0.85em; font-weight:400; color:var(--ink-light);">この1日は、変容の入口に立つための時間です。</span>
+      </p>
+    </div>
+
+    <div class="program-flow">
+      <div class="program-item">
+        <div class="program-time">午前前半</div>
+        <div>
+          <div class="program-tag tag-word">オープニング</div>
+          <div class="program-content-title">今日、ここに来たあなたへ</div>
+          <div class="program-content-desc">今の苦しさを、言葉にする。誰かに見せなくていい。紙の上だけで、本音を出す時間。「私と同じ人がいる」という安心感の中で1日が始まります。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">午前後半</div>
+        <div>
+          <div class="program-tag tag-head">頭で気づく</div>
+          <div class="program-content-title">
+            大切な人へのいら立ち。<br>
+            その正体と仕組みを知り、愛おしさを取り戻す。
+          </div>
+          <div class="program-content-desc">なぜ同じ出来事でも感じ方がまったく違うのか。なぜ「やらなきゃ」と思うほどやる気が消えるのか。なぜ日常の小さな「快」を積み重ねることが人生を変えるのか。その仕組みを、レクチャーで丸ごとお伝えします。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">昼食</div>
+        <div>
+          <div class="program-tag tag-word">休憩・交流</div>
+          <div class="program-content-title">仲間との時間</div>
+          <div class="program-content-desc">塾生・卒業生との交流の時間。「変わる前の自分」を知る人たちと話す、それ自体が多くのことを感じる体験になります。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">午後前半</div>
+        <div>
+          <div class="program-tag tag-heart">心で気づく</div>
+          <div class="program-content-title">根っこに触れる ——親へのワーク</div>
+          <div class="program-content-desc">すべての人間関係の問題には、根っこがあります。それに静かに触れ、「なぜ同じパターンを繰り返してきたのか」の入口に立ちます。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">午後後半</div>
+        <div>
+          <div class="program-tag tag-body">身体で受け取る</div>
+          <div class="program-content-title">生まれ直す ——ReBirthセッション</div>
+          <div class="program-content-desc">人生をこの手に取り戻す、特別な体験型セッション。温かく優しいものに包まれながら、ミカの誘導で内側の旅をします。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">夕方前半</div>
+        <div>
+          <div class="program-tag tag-word">振り返りと受け取り</div>
+          <div class="program-content-title">今日、何が動いたか</div>
+          <div class="program-content-desc">気づいたことを言葉にする。話したい方はシェア。話さなくてもOKです。話してくださった方には、ミカからフィードバックを致します。</div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">夕方後半</div>
+        <div>
+          <div class="program-tag tag-word">クロージング</div>
+          <div class="program-content-title">ReBirthは、入口</div>
+          <div class="program-content-desc">今日の気づきを持って、これからをどう生きるか。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VOICE ─── -->
+<section class="voice-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">参加者の声</div>
+    <h2 class="section-title">先を歩いた人たちの、言葉</h2>
+
+    <div class="voice-cards">
+      <div class="voice-card">
+        <p class="voice-text">夫に「離婚」という切り札を突きつけられ、参加しました。散々「夫が変わってくれれば」と訴えた私に、ミカさんは静かに言いました。「変わるべきは、ご自分です」と。半信半疑でしたが——今、自分を取り巻く全ての人に、心から感謝が湧いてきます。毎日変わらずバタバタだけれど、楽しい。そんな今の自分が、好きです。</p>
+        <p class="voice-name">40代・お子さんをお持ちの方</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-text">父のことが大嫌いで、全ての不幸は父のせいだと恨み続けていました。パニック障害、産後うつ。毎日が不安で暗かった。でも塾で気づいたんです——「私自身を幸せにする責任」を、ずっと放棄していたことに。それを自分に取り戻すと決めたら、少しずつ、でも確実に変わり始めました。今はうつ症状もパニック発作もほとんどなく、毎日笑顔で過ごしています。</p>
+        <p class="voice-name">30代・お子さんをお持ちの方</p>
+      </div>
+
+      <div class="voice-card">
+        <p class="voice-text">家族がいて、友達もいて、大きな喧嘩もない。他の人より恵まれている方だと思っていました。でも本当は、自分の感情が何なのか、まったくわからなくなっていた。気づいたんです——私は本当は、自由になりたかった。今は、可もなく不可もなかった2年前より、確実に「生きている」感覚があります。</p>
+        <p class="voice-name">30代・お子さんをお持ちの方</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MICA ─── -->
+<section class="mica-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">ファシリテーター</div>
+    <h2 class="section-title">MICA（ミカ）について</h2>
+    <div style="display:flex; gap:40px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex-shrink:0; width:220px;">
+        <img src="https://mica.coach/mika0915.jpg" alt="MICA（ミカ）" style="width:100%; border-radius:4px; display:block;">
+      </div>
+      <div style="flex:1; min-width:260px;">
+        <div class="mica-name">MICA（ミカ）</div>
+        <div class="mica-title">ごきげん人生デザイン塾　主宰</div>
+        <div class="mica-body">
+          <p>1977年生まれ。5人の子どもを育てる母。2024年に、12年間同居した姑を看取る。</p>
+          <p>約10年にわたり心理・自己理解・人間関係の構造を探究。2019年に「ごきげん人生デザイン塾」を設立。アメブロ10年・メルマガ6年、毎日発信を継続。これまで150名以上が学び、セッション時間数は1万時間以上。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DETAIL ─── -->
+<section class="detail-section">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">開催概要</div>
+    <h2 class="section-title">セミナー詳細</h2>
+
+    <table class="detail-table">
+      <tr>
+        <th>日時</th>
+        <td>2026年6月14日（日）受付10:00〜／開始10:15〜17:00</td>
+      </tr>
+      <tr>
+        <th>場所</th>
+        <td>
+          東京都江東区某所<br>
+          <span style="font-size:12px; color:var(--ink-muted);">（詳細はお申し込み後にご連絡します）</span>
+        </td>
+      </tr>
+      <tr>
+        <th>定員</th>
+        <td>少人数制（定員になり次第締め切ります）</td>
+      </tr>
+      <tr>
+        <th>持ち物</th>
+        <td>
+          筆記用具、ノート<br>
+          毛布またはブランケット（ReBirthセッション用）<br>
+          <span style="font-size:12px; color:var(--ink-muted);">※昼食は各自ご持参またはご購入ください</span>
+        </td>
+      </tr>
+      <tr>
+        <th>参加費</th>
+        <td>
+          <span style="font-size:13px; color:var(--ink-muted); text-decoration:line-through;">定価 ¥33,000（税込）</span><br>
+          <span style="font-size:12px; color:var(--terracotta); letter-spacing:0.1em;">▼ 特別価格</span><br>
+          <span class="price-highlight">¥11,000（税込）</span>
+        </td>
+      </tr>
+      <tr>
+        <th>主催</th>
+        <td>ごきげん人生デザイン塾　MICA（ミカ）</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section style="padding: 100px 24px; background: var(--cream);">
+  <div style="max-width:760px; margin:0 auto;" class="reveal">
+    <div class="section-label">よくあるご質問</div>
+    <h2 class="section-title">FAQ</h2>
+
+    <div style="display: flex; flex-direction: column; gap: 0;">
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q1. 塾に入っていなくても参加できますか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">はい、もちろんです。このセミナーは「ごきげん人生デザイン塾」に入ったことがない方を主な対象としています。塾のことを知らなくても、まったく問題ありません。<br><br>また、塾卒業生も歓迎します。1日で体感できるダイジェスト版として、学びを深めたい方、自己理解と内観の習慣を取り戻したい方にも、ぜひいらしてください。</p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q2. 心理系やスピリチュアル系のセミナーですか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">どちらでもありません。「なぜ同じ出来事でも感じ方が違うのか」という、誰もが経験する現象の仕組みをお伝えします。理論と体験を組み合わせた、実践的な内容です。MICA（ミカ）独自のメソッドですが、心理学・脳科学・東洋の智恵など、様々な分野の知見と重なる部分を持っています。</p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q3. ReBirthセッションとは何ですか？怖くないですか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">毛布に包まれながら、MICAの誘導で内側の旅をする体験型セッションです。強制されることは一切ありません。あなたのペースで、あなたが決めたタイミングで進みます。「怖い」というより「不思議と安心できた」「素晴らしい時間だった」というご感想を多数いただいています。<br><br><a href="https://www.reservestock.jp/page/consecutive_events/45227#koe" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:underline;">ReBirthセッション体験者の声はこちら</a></p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q4. 1日だけで何か変わりますか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">「変わる」というより「気づく」1日です。気づきは1日で起きます。ただし変容は積み重ねでしか起きません。この1日は、変容の入口に立つための時間です。深い気づきは、穏やかな現実の変容を、確かに着実に促します。</p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q5. 人間関係以外の悩みでも参加できますか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">はい。仕事、お金、自分らしさ、将来への不安——どんな悩みも根っこは同じ構造を持っています。「人間関係以外の悩み」と思っていても、参加してみると「あ、これもつながっていたんだ」と感じる方が多いです。</p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q6. 子育て中ですが、1日参加できるか不安です。</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">お子さんのお預け先を確保できれば、ぜひいらしてください。「子育て中だからこそ、この1日が必要だった」という声を多くいただいています。<br><br>多くの日本人女性が、自分より家族を優先しがちです。無意識の価値観として、「母たるものかくあるべき」というものが深く刻まれています。でもその価値観は、本当にあなたと家族を幸せにするものなのでしょうか。「自分を大切にする」「直観に従う」という挑戦を、ぜひしてみてほしいと願っています。</p>
+      </div>
+
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--dust);">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q7. 男性でも参加できますか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">はい。「ごきげん人生デザイン塾」は男女問わずウェルカムです。現在、男性の塾生も在籍しています。個々で学べることは、男女の性別を問わない、人としての智恵です。</p>
+      </div>
+
+      <div style="padding: 32px 0;">
+        <p style="font-family:'Shippori Mincho',serif; font-size:clamp(15px,2vw,18px); font-weight:600; color:var(--ink); margin-bottom:16px;">Q8. 参加後、塾への入塾を勧められますか？</p>
+        <p style="font-size:clamp(13px,1.6vw,15px); color:var(--ink-light); line-height:2.0;">セミナーの最後に塾のご案内はします。ただし強引なセールスは一切行いません。参加した上で「続きを学びたい」と感じた方だけにご案内します。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA FINAL ─── -->
+<section class="cta-section">
+  <h2 class="section-title">
+    言うことを聞かない子を、<br>尊敬できる自分へ。<br>
+    夫の愚痴が、<br>面白くなる自分へ。
+  </h2>
+  <p>ごきげん人生の入口が、ここにあります。</p>
+  <a href="https://www.reservestock.jp/page/consecutive_events/46064" class="cta-btn-large" target="_blank" rel="noopener">
+    申し込む
+  </a>
+  <p class="cta-note">※ リザストのお申し込みページへ移動します</p>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© ごきげん人生デザイン塾　MICA（ミカ）</p>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    stickyCta.classList.toggle('show', window.scrollY > 700);
+  });
+</script>
+</body>
+</html>
